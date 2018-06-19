@@ -1,0 +1,32 @@
+COMANDOS UTILIZADOS NO TERMINAL
+*os arquivos gerados foram renomeados de maneira mais identificavel ao final de cada experimento para guardar os resultados em pastas separadas*
+
+=================================================================================================
+Para Question Box
+=================================================================================================
+
+opencv_createsamples -img cube.png -bg bg.txt -info info/info.lst -pngoutput info -maxxangle 0.5 -maxyangle 0.5 -maxzangle 0.5 -num 700
+
+opencv_createsamples -info info/info.lst -num 700 -w 20 -h 20 -vec positives.vec
+
+opencv_traincascade -data data -vec positives.vec -bg bg.txt -numPos 700 -numNeg 300 -numStages 10 -w 20 -h 20
+
+=================================================================================================
+Para Rubik Cube
+=================================================================================================
+
+opencv_createsamples -img rubik.png -bg bg.txt -info info/info.lst -pngoutput info -maxxangle 0.5 -maxyangle 0.5 -maxzangle 0.5 -num 700
+
+opencv_createsamples -info info/info.lst -num 700 -w 20 -h 20 -vec positives.vec
+
+opencv_traincascade -data data -vec positives.vec -bg bg.txt -numPos 700 -numNeg 300 -numStages 10 -w 20 -h 20
+=================================================================================================
+Para Caneta
+=================================================================================================
+
+opencv_createsamples -img 7.png -bg bg.txt -info info/info.lst -pngoutput info -maxxangle 0.5 -maxyangle 0.5 -maxzangle 0.5 -num 700
+
+opencv_createsamples -info info/info.lst -num 700 -w 160 -h 20 -vec positives.vec
+
+opencv_traincascade -data data -vec positives.vec -bg bg.txt -numPos 700 -numNeg 300 -numStages 10 -w 160 -h 20
+
